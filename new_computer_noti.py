@@ -56,7 +56,7 @@ def main(config):
     recent_file = "recents.json"
 
     bot.sendMessage(config['TELEGRAM']
-                    ['COMPUTER_NOTI_CHANNEL'], '충남대학교 공지사항 알림봇입니다')
+                    ['COMPUTER_NOTI_CHANNEL'], '충남대학교 공지사항 알리미입니다')
 
     # data init : 처음 한 번 가지고 오기
     load_notices(recent_file)
