@@ -3,6 +3,7 @@ import time
 import telegram
 from computer import Computer
 import json
+from datetime import datetime, timedelta
 
 data = None  # dict
 # {
@@ -18,7 +19,7 @@ def load_notices(path):
         data = json.load(f)
 
 
-def save_notices(path, url_title):
+def save_notices(path):
     with open(path, "w", encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
@@ -55,23 +56,26 @@ def main(config):
     computer = Computer(config['urls']['computer'])
     recent_file = "recents.json"
 
-    bot.sendMessage(config['TELEGRAM']
-                    ['COMPUTER_NOTI_CHANNEL'], '충남대학교 공지사항 알리미입니다')
+    bot.sendMessage(config['TELEGRAM']['RECEIVER_ID'], '충남대학교 공지사항 알리미를 시작합니다')
 
     # data init : 처음 한 번 가지고 오기
     load_notices(recent_file)
 
     while True:
+        is_changed = False
         # 각 url에서
         for url_data in config['urls']['computer']:
             arr = computer.check_noti(url_data)  # new 글 읽어서
+            if type(arr) != list:  # 에러나면 string
+                bot.sendMessage(config['TELEGRAM']['RECEIVER_ID'], arr)
+                continue
             url_title = url_data['title']
             # 저장된 내용이랑 비교
             idxs = isDiff(arr, url_title)
 #             print('{}의 다른 인덱스 : {}'.format(url_title, idxs))
             if len(idxs) > 0:  # 저장하고 data update
+                is_changed = True
                 data[url_title] = arr  # data update
-                save_notices(recent_file, data[url_title])  # 저장
                 bot.sendMessage(
                     config['TELEGRAM']['COMPUTER_NOTI_CHANNEL'], '{}에 새로운 글이 등록되었습니다'.format(url_title))
                 for i in idxs:
@@ -80,11 +84,21 @@ def main(config):
                     bot.sendMessage(config['TELEGRAM']
                                     ['COMPUTER_NOTI_CHANNEL'], msg)
 
-    time.sleep(config['INTERTAL_MINS']*60)
+        now = datetime.utcnow() + timedelta(hours=9)
+        if is_changed:
+            save_notices(recent_file)  # 저장
+#         else:
+#             bot.sendMessage(config['TELEGRAM']['RECEIVER_ID'],"새로 등록된 글이 없습니다")
+
+        bot.sendMessage(config['TELEGRAM']['RECEIVER_ID'], "%s년 %s월 %s일 %s시 %s분" % (
+            now.year, now.month, now.day, now.hour, now.minute))
+        if not (6 < now.hour < 19):  # 오전 6시 ~ 오후 7시 사이가 아니면
+            time.sleep(6 * 3600)  # 6시간 sleep
+        else:  # 근무시간이면 30분에 한번씩
+            time.sleep(config['INTERTAL_MINS']*60)
 
 
 if __name__ == "__main__":
-    config = None
     with open('config.json') as f:
         config = json.load(f)
     main(config)
