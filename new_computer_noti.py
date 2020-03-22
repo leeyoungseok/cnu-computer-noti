@@ -92,7 +92,9 @@ def main(config):
 
         bot.sendMessage(config['TELEGRAM']['RECEIVER_ID'], "%s년 %s월 %s일 %s시 %s분" % (
             now.year, now.month, now.day, now.hour, now.minute))
-        if not (6 < now.hour < 19):  # 오전 6시 ~ 오후 7시 사이가 아니면
+        if now.weekday() < 5:  # 평일에는 12시간 sleep
+            time.sleep(12 * 3600)
+        elif not (6 < now.hour < 19):  # 오전 6시 ~ 오후 7시 사이가 아니면
             time.sleep(6 * 3600)  # 6시간 sleep
         else:  # 근무시간이면 30분에 한번씩
             time.sleep(config['INTERTAL_MINS']*60)
