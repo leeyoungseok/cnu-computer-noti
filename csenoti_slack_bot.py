@@ -17,9 +17,7 @@ class CSEbot:
             channel = self.channels['PROJECT']
         else:
             channel = self.channels['TEST']
-        # print("channel : ",channel)
         # 메시지 전송 (#채널명, 내용)
-        channel = self.channels['TEST']
         self.bot.chat.post_message(channel, msg)
 
 

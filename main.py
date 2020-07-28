@@ -33,7 +33,7 @@ def run():
             if len(idxs) > 0:  # 저장하고 data update
                 is_changed = True
                 notification.data[title] = new_data  # data update
-                bot.sendMessage(title, '{}에 새로운 글이 등록되었습니다'.format(title))
+                # bot.sendMessage(title, '{}에 새로운 글이 등록되었습니다'.format(title))
                 for i in idxs:
                     msg = notification.get_msg(title, i)
                     bot.sendMessage(title, msg)
