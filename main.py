@@ -45,17 +45,19 @@ def run():
 
         waiting()
 
+
 def waiting():
     now = datetime.utcnow() + timedelta(hours=9)
 
     bot.sendMessage('TEST', "%s년 %s월 %s일 %s시 %s분" % (
         now.year, now.month, now.day, now.hour, now.minute))
-    if now.weekday() < 5:  # 평일에는 12시간 sleep
+    if now.weekday() >= 5:  # 주말에는 12시간 sleep
         time.sleep(12 * 3600)
     elif not (6 < now.hour < 19):  # 오전 6시 ~ 오후 7시 사이가 아니면
         time.sleep(6 * 3600)  # 6시간 sleep
-    else:  # 근무시간이면 30분에 한번씩
-        time.sleep(config['INTERTAL_MINS']*60)
+    else:  # 근무시간이면 INTERVAL_MINS 만큼 sleep
+        time.sleep(config['INTERVAL_MINS']*60)
+
 
 if __name__ == '__main__':
     run()
