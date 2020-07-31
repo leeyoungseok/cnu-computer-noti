@@ -1,6 +1,8 @@
 # 충남대학교 컴퓨터공학과 공지사항 알리미
 
-## [Slack 링크 cnunotis.slack.com](https://cnunotis.slack.com)
+## [Slack 링크](https://cnunotis.slack.com)
+
+#### [초대 링크](https://join.slack.com/t/cnunotis/shared_invite/zt-g8ilc139-GBSnj6YyRrkIn4Z9bN8JjQ)
 
 ~~[텔레그램 채널 링크](https://t.me/cnu_computer_noti)~~
 
