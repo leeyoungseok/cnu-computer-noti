@@ -20,13 +20,15 @@ class Crawler:
         try:
             res = requests.get(self.url)
             soup = BeautifulSoup(res.text, 'html.parser')
-            articles = soup.find_all("p", {"class": "b-new"}) # new가 붙은 공지만 확인 (없을 수도 있다)
+            # new가 붙은 공지만 확인 (없을 수도 있다)
+            articles = soup.find_all("p", {"class": "b-new"})
 
             for article in articles:
                 date = article.parent.parent.parent.parent.td.find_next("td").find_next("span", {
                     "class": "b-date"}).text.strip()
                 title = self.prettier_content(article.parent.parent.a['title'])
-                ret.append({"date": date, "title": title})
+                link = article.parent.parent.a['href']
+                ret.append({"date": date, "title": title, "link": link})
 
             return ret
 
@@ -64,4 +66,3 @@ if __name__ == "__main__":
     ]
     crawler = Crawler(data[2])
     print(crawler.check())
-

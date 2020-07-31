@@ -16,6 +16,7 @@ def run():
         for url_data in config['NOTIFICATION']['CSE']:
             crawler = Crawler(url_data)
             title = url_data['title']
+            url = url_data['url']
             new_data = crawler.check()  # new 글 읽어서
 
             if type(new_data) != list:  # 에러나면 string
@@ -35,7 +36,7 @@ def run():
                 notification.data[title] = new_data  # data update
                 # bot.sendMessage(title, '{}에 새로운 글이 등록되었습니다'.format(title))
                 for i in idxs:
-                    msg = notification.get_msg(title, i)
+                    msg = notification.get_msg(title, url, i)
                     bot.sendMessage(title, msg)
 
         if is_changed:  # 새로운 글이 올라왔다면 저장되어있던 공지 update
