@@ -7,14 +7,14 @@ class Crawler:
     def __init__(self, url_data):
         self.title, self.url = url_data['title'], url_data['url']
 
-    def prettier_content(self, str):
+    def _prettier_title(self, str):
         content = str[:-6].strip()
         if content[-1] == '-':
             content = content[:-1].strip()
         # content += '\n\n'
         return content
 
-    def check(self):
+    def crawl_naw_notiwes_new_notices(self):
         ret = []
         err_msg = ''
         try:
@@ -24,10 +24,11 @@ class Crawler:
             articles = soup.find_all("p", {"class": "b-new"})
 
             for article in articles:
-                date = article.parent.parent.parent.parent.td.find_next("td").find_next("span", {
+                this_article = article.parent.parent
+                date = this_article.parent.parent.td.find_next("td").find_next("span", {
                     "class": "b-date"}).text.strip()
-                title = self.prettier_content(article.parent.parent.a['title'])
-                link = article.parent.parent.a['href']
+                title = self._prettier_title(this_article.a['title'])
+                link = this_article.a['href']
                 ret.append({"date": date, "title": title, "link": link})
 
             return ret
@@ -46,23 +47,3 @@ class Crawler:
             print(err_msg)
 
         return err_msg
-
-
-if __name__ == "__main__":
-    # TEST #
-    data = [
-        {
-            "title": "학사공지",
-            "url": "https://computer.cnu.ac.kr/computer/notice/bachelor.do"
-        },
-        {
-            "title": "일반공지",
-            "url": "https://computer.cnu.ac.kr/computer/notice/notice.do"
-        },
-        {
-            "title": "사업단공지",
-            "url": "https://computer.cnu.ac.kr/computer/notice/project.do"
-        }
-    ]
-    crawler = Crawler(data[2])
-    print(crawler.check())
