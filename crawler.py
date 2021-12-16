@@ -14,7 +14,7 @@ class Crawler:
         # content += '\n\n'
         return content
 
-    def crawl_naw_notiwes_new_notices(self):
+    def crawl_new_notices(self):
         ret = []
         err_msg = ''
         try:

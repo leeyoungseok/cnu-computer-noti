@@ -17,4 +17,4 @@ def waiting(bot):
     elif not (6 < now.hour < 19):  # 오전 6시 ~ 오후 7시 사이가 아니면
         time.sleep(6 * 3600)  # 6시간 sleep
     else:  # 근무시간이면 INTERVAL_MINS 만큼 sleep
-        time.sleep(config['INTERVAL_MINS']*60)
+        time.sleep(360)

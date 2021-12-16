@@ -1,67 +1,42 @@
 {
-  "학사공지": [
-    {
-      "date": "20.07.27",
-      "title": "[졸업논문] [주제추가] 2020후기(2020-2학기) 졸업프로젝트 계획서 제출 안내 (기한: 2020.8.28.(금)까지)",
-      "link": "?mode=view&articleNo=195251&article.offset=0&articleLimit=10"
-    },
-    {
-      "date": "20.07.27",
-      "title": "2020-2학기 백마인턴십 학생신청 안내 (기한: ~내일 2020.7.28.(화)까지)",
-      "link": "?mode=view&articleNo=195118&article.offset=0&articleLimit=10"
-    },
-    {
-      "date": "20.07.22",
-      "title": "[★★★ 2학기 예비수강신청 (교양일부) : 7.27~7.29 18시 ★★★]",
-      "link": "?mode=view&articleNo=194623&article.offset=0&articleLimit=10"
-    }
-  ],
-  "일반공지": [
-    {
-      "date": "20.07.28",
-      "title": "[스마트팜운영자양성사업단] 인공지능(파이썬, 딥러닝) 온라인교육 참가자 모집 안내 (신청기한: 7.30.(목)까지)",
-      "link": "?mode=view&articleNo=195336&article.offset=0&articleLimit=10"
-    },
-    {
-      "date": "20.07.27",
-      "title": "[학부 고학년, 데이터과학 수강자] 한국생산성본부 DSAC(데이터사이언스 인증교육과정) 보조강사(조교) 모집",
-      "link": "?mode=view&articleNo=195210&article.offset=0&articleLimit=10"
-    },
-    {
-      "date": "20.07.24",
-      "title": "2020학년도 2학기 충남대학교총동창회장학재단 장학생 선발 안내(접수기간: 7. 30.(목) ~ 8. 7.(금))",
-      "link": "?mode=view&articleNo=195043&article.offset=0&articleLimit=10"
-    },
-    {
-      "date": "20.07.24",
-      "title": "국립대육성사업 2020 충남대 쓰담쓰담 온라인 멘토링 멘토모집 안내 (서류접수: 8.4.(화)~8.21.(금))",
-      "link": "?mode=view&articleNo=195040&article.offset=0&articleLimit=10"
-    },
-    {
-      "date": "20.07.24",
-      "title": "2020대학혁신지원사업「경진대회지원사업」교외경진대회참가 지원 안내",
-      "link": "?mode=view&articleNo=195038&article.offset=0&articleLimit=10"
-    },
-    {
-      "date": "20.07.24",
-      "title": "2020학년도 제2학기 2차 국가근로장학사업 학생 신청기간 안내 (2020. 8. 20.(목) 9:00 ~ 09. 10.(목) 18:00까지)",
-      "link": "?mode=view&articleNo=195016&article.offset=0&articleLimit=10"
-    },
-    {
-      "date": "20.07.23",
-      "title": "2020년도 KSB 인공지능 프레임워크플랫폼 BeeAI 활용 공모전 안내",
-      "link": "?mode=view&articleNo=194989&article.offset=0&articleLimit=10"
-    },
-    {
-      "date": "20.07.22",
-      "title": "삼성SDS '20년 하계 알고리즘 특강 (신청기간: ~7.21.(금) 14:00)",
-      "link": "?mode=view&articleNo=194690&article.offset=0&articleLimit=10"
-    },
-    {
-      "date": "20.07.22",
-      "title": "SW개발보안 경진대회 (행안부, 안랩 후원) 참가 안내 (접수기간:7.13.~8.2.(일) 자정)",
-      "link": "?mode=view&articleNo=194652&article.offset=0&articleLimit=10"
-    }
-  ],
-  "사업단공지": []
+    "학사공지": [
+        {
+            "date": "21.12.15",
+            "title": "(2022.1.9까지)2022년도 1학기 교내우수장학생 선발을 위한 장학가산점 서류 제출 안내",
+            "link": "?mode=view&articleNo=284121&article.offset=0&articleLimit=10"
+        },
+        {
+            "date": "21.12.15",
+            "title": "[논문제출 안내] 졸업논문 작성자(2021.3.1이전부터~2021.11.30)  졸업논문 제출 안내",
+            "link": "?mode=view&articleNo=284086&article.offset=0&articleLimit=10"
+        },
+        {
+            "date": "21.12.13",
+            "title": "2021학년도 동계 CNU 학습동아리 모집 안내",
+            "link": "?mode=view&articleNo=283936&article.offset=0&articleLimit=10"
+        },
+        {
+            "date": "21.12.08",
+            "title": "2021학년도 제2학기 강의 기말평가 실시 안내",
+            "link": "?mode=view&articleNo=283561&article.offset=0&articleLimit=10"
+        },
+        {
+            "date": "21.12.07",
+            "title": "[★★★ 기말고사 실시에 따른 학과 시험 실시 유의사항 안내 ★★★",
+            "link": "?mode=view&articleNo=283487&article.offset=0&articleLimit=10"
+        }
+    ],
+    "일반공지": [
+        {
+            "date": "21.12.08",
+            "title": "[학과 봉사장학생 모집 안내:2명]12.15(수)까지 신청",
+            "link": "?mode=view&articleNo=283539&article.offset=0&articleLimit=10"
+        },
+        {
+            "date": "21.12.07",
+            "title": "A형 간염 유료접종 한시적 시행 안내",
+            "link": "?mode=view&articleNo=283408&article.offset=0&articleLimit=10"
+        }
+    ],
+    "사업단공지": []
 }

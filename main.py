@@ -1,4 +1,4 @@
-from Crawler import Crawler
+from crawler import Crawler
 from Notification import Notification
 from Slackbot import Slackbot
 from configs import *
